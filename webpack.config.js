@@ -3,6 +3,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ClearWebpack = require('clean-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 
 module.exports = {
@@ -14,6 +15,12 @@ module.exports = {
     },
 
     devtool: 'source-map',
+    devServer: {
+        port: 9001,
+        contentBase: path.join(__dirname, 'dist'),
+        hot: true,
+        overlay: true,
+    },
 
     module: {
         rules: [
@@ -49,10 +56,41 @@ module.exports = {
             },
 
             {
+                test: /\.(jpg|jpeg|png)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'img/[name].[ext]',
+                        }
+                    },
+
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 80
+                            },
+                            web: {
+                                quality: 80
+                            }
+                        }
+                    }
+                    
+                ]    
+                
+            },
+
+            {
                 test: /\.html$/,
                 use: [
                     {
-                        loader: 'html-loader'
+                        loader: 'html-loader',
+                        options: {
+                            minimize: false,
+                            attrs: ['img:src']
+                        }
                     }
                 ]
             }
@@ -63,7 +101,13 @@ module.exports = {
     plugins: [
         new ClearWebpack('dist'),
         new MiniCssExtractPlugin({
-            filename: 'style.css'
-        })
+            filename: 'css/style.css'
+        }),
+        new HTMLPlugin({
+            filename: 'index.html',
+            template: './src/index.html',
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
     ]     
 };
