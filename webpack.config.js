@@ -82,7 +82,7 @@ module.exports = {
                             name: 'img/[name].[ext]',
                         }
                     },
-                    /*
+                    
                     {
                         loader: 'image-webpack-loader',
                         options: {
@@ -94,7 +94,7 @@ module.exports = {
                                 quality: 80
                             }
                         }
-                    }*/
+                    }
                     
                 ]    
                 
