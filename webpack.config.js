@@ -25,9 +25,24 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: 'babel-loader',
+            },
+
+            {
                 test: /\.sass$/,
+                exclude: /node_modules/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                        
+                        {
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                publicPath: './../'
+                            }
+
+                        },
+                        
                         {
                             loader: 'css-loader',
                             options: {
@@ -53,10 +68,12 @@ module.exports = {
                             }
                         }
                     ],
+
             },
 
             {
                 test: /\.(jpg|jpeg|png)$/,
+                exclude: /node_modules/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -64,7 +81,7 @@ module.exports = {
                             name: 'img/[name].[ext]',
                         }
                     },
-
+                    /*
                     {
                         loader: 'image-webpack-loader',
                         options: {
@@ -76,14 +93,27 @@ module.exports = {
                                 quality: 80
                             }
                         }
-                    }
+                    }*/
                     
                 ]    
                 
             },
 
             {
+                test: /\.(woff|woff2)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10,
+                        name: 'fonts/[name].[ext]',
+                    }
+                }
+            },
+
+            {
                 test: /\.html$/,
+                exclude: /node_modules/,
                 use: [
                     {
                         loader: 'html-loader',
@@ -106,6 +136,11 @@ module.exports = {
         new HTMLPlugin({
             filename: 'index.html',
             template: './src/index.html',
+        }),
+        new webpack.ProvidePlugin({
+            $: ['jquery'],
+            jQuery: ['jquery'],
+            'window.jQuery': 'jquery',
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),

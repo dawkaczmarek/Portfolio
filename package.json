@@ -15,6 +15,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
@@ -28,11 +31,14 @@
     "postcss-loader": "^2.1.5",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
     "webpack": "^4.12.2",
     "webpack-cli": "^2.1.5",
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "build": "^0.1.4",
+    "jquery": "^3.3.1",
     "require-glob": "^3.2.0"
   }
 }
