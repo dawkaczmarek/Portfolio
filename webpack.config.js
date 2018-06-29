@@ -3,6 +3,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ClearWebpack = require('clean-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
+const BrowserWebpackPlugin = require('browser-sync-webpack-plugin');
 const webpack = require('webpack');
 
 
@@ -144,5 +145,13 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
+
+        new BrowserWebpackPlugin({
+            hot: 'localhost',
+            port: 9100,
+            proxy: 'http://localhost:9001',
+        }, {
+            reload: false
+        })
     ]     
 };
