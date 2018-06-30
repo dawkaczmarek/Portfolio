@@ -11,7 +11,7 @@ module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
-        filename: 'bundle.js',
+        filename: 'bundle-[hash:7].js',
         path: path.resolve(__dirname, 'dist')
     },
 
@@ -48,7 +48,9 @@ module.exports = {
                             loader: 'css-loader',
                             options: {
                                 sourceMap: true,
-                                import: true
+                                import: true,
+                                minimize: false,
+
                             }
                         },
 
@@ -132,7 +134,7 @@ module.exports = {
     plugins: [
         new ClearWebpack('dist'),
         new MiniCssExtractPlugin({
-            filename: 'css/style.css'
+            filename: 'css/[name]-[hash:7].css',
         }),
         new HTMLPlugin({
             filename: 'index.html',
@@ -152,6 +154,8 @@ module.exports = {
             proxy: 'http://localhost:9001',
         }, {
             reload: false
-        })
+        }),
+
+        new webpack.HashedModuleIdsPlugin()
     ]     
 };
