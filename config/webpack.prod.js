@@ -35,9 +35,11 @@ const prod = merge([
         },
         minimizeOptionsHtml: true
     }),
-    parts.CleanPlugin({
-        path: ['dist'],
-        options: path.resolve(__dirname, '..')
+    parts.ClearWebpack({
+        paths: ['dist'],
+        options: {
+            root: path.resolve(__dirname, '..'),
+        }
     }),
     parts.ProvidePlugin(),
     parts.HashedModulePlugin()

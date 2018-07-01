@@ -166,13 +166,15 @@ exports.loadHTML = ({
 }
 
 
-exports.CleanPlugin = ({path, options}) => {
+exports.ClearWebpack = ({ paths, options }) => {
+
     return {
         plugins: [
-            new ClearWebpack(path, options)
+            new ClearWebpack(paths, options),
         ]
     }
 }
+
 
 exports.ProvidePlugin = () => {
     return {
