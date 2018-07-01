@@ -1,5 +1,14 @@
+const prod = require('./config/webpack.prod');
 
-const path = require('path');
+
+module.exports = (env) => {
+    if (env.prod) {
+        return prod;
+    }
+}
+
+
+/*const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ClearWebpack = require('clean-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
@@ -158,4 +167,4 @@ module.exports = {
 
         new webpack.HashedModuleIdsPlugin()
     ]     
-};
+};*/
