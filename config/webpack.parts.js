@@ -1,3 +1,4 @@
+const BrowserWebpackPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ClearWebpack = require('clean-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
@@ -26,7 +27,8 @@ exports.loadSASS = ({
     },
     cssMinimizeOptions = {
         minimize: false
-    }
+    },
+
 } = {}) => {
     return {
         module: {
@@ -86,27 +88,29 @@ exports.loadImg = ({
     fileOptions = {
          name: 'img/[name].[ext]', 
     },
-    imageOptions
+    imageOptions,
+    isDev = false
 } = {}) => {
+
+    const loaders = [{
+        loader: 'file-loader',
+        options: fileOptions,
+    }];
+
+    if (isDev === false) {
+        loaders.push({
+            loader: 'image-webpack-loader',
+            options: imageOptions,
+        });
+    }
+
     return {
         module: {
             rules: [
                 {
                     test: /\.(jpg|jpeg|png)$/,
                     exclude: /node_modules/,
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: fileOptions
-                        },
-                        
-                        {
-                            loader: 'image-webpack-loader',
-                            options: imageOptions
-                        }
-                        
-                    ]    
-                    
+                    use: loaders   
                 }
             ]
         }
@@ -121,6 +125,7 @@ exports.loadFonts = ({
         name: 'fonts/[name].[ext]',
     }
 } = {}) => {
+
     return {
         module: {
             rules: [
@@ -141,6 +146,7 @@ exports.loadHTML = ({
     pluginsOptions,
     minimizeOptionsHtml
 } = {}) => {
+
     return {
         module: {
             rules: [
@@ -177,6 +183,7 @@ exports.ClearWebpack = ({ paths, options }) => {
 
 
 exports.ProvidePlugin = () => {
+
     return {
         plugins: [
             new webpack.ProvidePlugin({
@@ -189,9 +196,56 @@ exports.ProvidePlugin = () => {
 }
 
 exports.HashedModulePlugin = () => {
+
     return {
         plugins: [
             new webpack.HashedModuleIdsPlugin()
+        ]
+    }
+}
+
+exports.devServer = ({
+    port = 9001,
+    hot = true,
+    overlay = true,
+    contentBase
+} = {}) => {
+
+    const plugins = [];
+
+    if(hot = true) {
+        plugins.push(
+            new webpack.HotModuleReplacementPlugin(),
+            new webpack.NamedModulesPlugin()
+        )
+    }
+
+    return {
+        devServer: {
+            port,
+            contentBase,
+            hot,
+            overlay
+        },
+        plugins
+    }
+}
+
+exports.BrowserSync = ({
+    hot = 'localhost',
+    port = 9100,
+    proxy = 'http://localhost:9001',
+    options = {
+        reload: false
+    }
+} = {}) => {
+    return {
+        plugins: [
+            new BrowserWebpackPlugin({
+                hot,
+                port,
+                proxy
+            }, options),
         ]
     }
 }

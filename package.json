@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -p --env.prod",
-    "start": "nodemon --watch webpack.config.js --watch .browserslistrc --watch .babelrc --watch .browserslistrc --exec \"webpack-dev-server\""
+    "start": "nodemon --watch webpack.config.js --watch .browserslistrc --watch .babelrc --watch .browserslistrc --exec \"webpack-dev-server --env.dev\""
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,6 @@
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
-    "glob": "^7.1.2",
     "html-loader": "^0.5.5",
     "html-minifier": "^3.5.17",
     "html-webpack-plugin": "^3.2.0",
@@ -42,7 +41,6 @@
   },
   "dependencies": {
     "build": "^0.1.4",
-    "jquery": "^3.3.1",
-    "require-glob": "^3.2.0"
+    "jquery": "^3.3.1"
   }
 }
