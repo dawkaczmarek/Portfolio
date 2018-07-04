@@ -14,6 +14,12 @@ const config = {
 }
 
 const prod = merge([
+    parts.ClearWebpack({
+        paths: ['dist'],
+        options: {
+            root: path.resolve(__dirname, '../'),
+        }
+    }),
     parts.loadJS(),
     parts.loadSASS(),
     parts.loadImg({
@@ -34,12 +40,6 @@ const prod = merge([
             template: './src/index.html',
         },
         minimizeOptionsHtml: true
-    }),
-    parts.ClearWebpack({
-        paths: ['dist'],
-        options: {
-            root: path.resolve(__dirname, '..'),
-        }
     }),
     parts.ProvidePlugin(),
     parts.HashedModulePlugin()
