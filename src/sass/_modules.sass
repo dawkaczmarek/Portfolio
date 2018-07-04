@@ -24,3 +24,74 @@
     &:hover
         border-bottom: 2px solid $primaryColor
         cursor: pointer
+
+/* Hero */
+
+.carousel__wrapper
+    position: relative
+    overflow: hidden
+
+.carousel__item
+    height: 450px
+    display: flex
+    align-items: center
+    flex: 1 0 100vw
+    justify-content: center
+    padding: 50px 0 50px 0
+    max-width: 1800px
+    overflow-x: hidden
+
+.first__slide
+    background-image: url(../img/carousel1.jpg)
+    @include background-properties  
+
+.hero__item
+    display: flex
+    align-items: center
+    flex-direction: column
+
+.hero__item--title
+    margin-bottom: 15%
+    @include boldFont
+    @include font-size(60px)
+    letter-spacing: 5px
+    color: $primaryTitleColor
+
+.hero__item--titleColor
+    color: $primaryColor
+
+.hero__item--button
+  padding: 18px 40px
+  margin-bottom: 5%
+  border-radius: 30px
+  background-color: $primaryColor
+  @include semiboldFont
+  @include font-size(18px)
+  letter-spacing: 0.6px
+  color: #ffffff
+  cursor: pointer
+  &:hover
+    background-color: $primaryColor + 15
+
+/* Bullets */
+.bullets__list
+    position: absolute
+    display: flex
+    flex-direction: row
+    left: 49.5%
+    transform: translateX(-49.5%)
+    bottom: 8%
+    font-size: 0
+    cursor: pointer
+    > .active
+        background-color: $primaryColor
+
+.bullet
+    height: 13px
+    width: 13px
+    margin-left: 9px
+    border-radius: 50%
+    border: 2px solid $primaryColor
+    cursor: pointer
+    &:hover
+        background-color: $primaryColor   
