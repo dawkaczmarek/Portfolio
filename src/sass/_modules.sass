@@ -1,4 +1,26 @@
-body 
-    background-color: red
-    font-family: aileronregular
-    font-size: 35px
+/* Navigation */
+#nav 
+    background-color: $tertiaryBgColor
+
+.flex-wrapper__nav
+    height: 80px
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.nav__logo
+    display: flex
+    align-items: center
+
+.nav__logo--text
+    margin-left: 10px
+    
+
+.navbar__link
+    margin: 0 15px
+    padding-bottom: 10px
+    &:last-child
+        margin-right: 0
+    &:hover
+        border-bottom: 2px solid $primaryColor
+        cursor: pointer

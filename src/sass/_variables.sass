@@ -1,2 +1,52 @@
-div
-    display: flex;
+/*** calculate font sizie ***/
+$base-font-size: 17px
+
+@function calculateRem($size)
+    $remSize: $size / $base-font-size
+    @return $remSize * 1rem
+
+@mixin font-size($size)
+    font-size: calculateRem($size)
+
+
+/*** Fonts types ***/    
+@mixin lightFont
+    font-family: aileronlight
+
+@mixin regularFont
+    font-family: aileronregular
+
+@mixin semiboldFont
+    font-family: aileronsemibold
+
+@mixin boldFont
+    font-family: aileronbold                    
+
+
+/*** Colors ***/
+
+/** Main colors **/
+$primaryColor: #00ea94
+$secondaryColor: #8084c4
+$tertiaryColor: #707070
+
+/** Backgrounds colors ***/
+$primaryBgdColor: #fefefe
+$secodaryBgColor: #f7f7f7
+$tertiaryBgColor: #f1f2f6
+
+/** Fonts colors **/
+
+/* Titles */    
+$primaryTitleColor: #262626
+$secondaryTitleColor: #aeaeae
+
+/* Pargraphs */
+$primaryPragaphColor: #3d3d3d
+$secondaryParagraphColor: #8084c4
+
+/** Form color **/
+$primaryFormColor: #8c8c8c        
+
+
+
