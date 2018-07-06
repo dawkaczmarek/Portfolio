@@ -119,28 +119,47 @@
     color: $primaryTitleColor
 
 .section__title--text
-    margin-top: 1%
+    margin-top: 0.5%
     @include font-size(14px)
     @include lightFont
     text-transform: uppercase
     color: $secondaryTitleColor        
 
-/* O mnie */
-#o-mnie
+/* About me */
+#about-me
     padding: $paddingSection
 
-.o-mnie__text
+.about-me__text
     line-height: 25px
     padding: 2%
 
-.o-mnie__button
-    padding: 15px 40px
-    border-radius: 40px
-    @include semiboldFont
+.about-me__button
+    @include button-properties
     background-color: $tertiaryColor
-    letter-spacing: 1px
-    cursor: pointer
     color: #ffffff
     &:hover
         background-color: $primaryColor            
 
+/* Projects */
+#projects
+    padding: $paddingSection
+
+.projects__description
+    @include font-size(20px)
+    line-height: 25px   
+
+.projects__description--title
+    @include semiboldFont    
+
+.projects__description--titleColor
+    color: $secondaryColor
+
+.projects__description--text
+    margin-bottom: 2%     
+
+.projects__description--button
+    @include button-properties
+    background-color: $tertiaryColor
+    color: #ffffff
+    &:hover
+        background-color: $secondaryColor

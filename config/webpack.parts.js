@@ -236,7 +236,7 @@ exports.BrowserSync = ({
     port = 9100,
     proxy = 'http://localhost:9001',
     options = {
-        reload: false
+        reload: true
     }
 } = {}) => {
     return {
