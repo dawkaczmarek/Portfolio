@@ -15,7 +15,7 @@ const config = {
 
 const prod = merge([
     parts.ClearWebpack({
-        paths: ['dist'],
+        paths: ['dist/*.*'],
         options: {
             root: path.resolve(__dirname, '../'),
         }
