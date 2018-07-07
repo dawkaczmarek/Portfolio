@@ -15,17 +15,11 @@
             <div class="container">
                 <div class="flex-wrapper__nav">
                     <div class="nav__logo">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 230.795 230.795" style="enable-background:new 0 0 230.795 230.795;" xml:space="preserve" width="30px" height="30px">
-                            <g>
-                                <path d="M60.357,63.289c-2.929-2.929-7.678-2.93-10.606-0.001L2.197,110.836C0.79,112.243,0,114.151,0,116.14   c0,1.989,0.79,3.896,2.196,5.303l47.348,47.35c1.465,1.465,3.384,2.197,5.304,2.197c1.919,0,3.839-0.732,5.303-2.196   c2.93-2.929,2.93-7.678,0.001-10.606L18.107,116.14l42.25-42.245C63.286,70.966,63.286,66.217,60.357,63.289z" fill="#00ea94"/>
-                                <path d="M228.598,110.639l-47.355-47.352c-2.928-2.928-7.677-2.929-10.606,0.001c-2.929,2.929-2.929,7.678,0.001,10.607   l42.051,42.048l-42.249,42.243c-2.93,2.929-2.93,7.678-0.001,10.606c1.465,1.465,3.384,2.197,5.304,2.197   c1.919,0,3.839-0.732,5.303-2.196l47.554-47.547c1.407-1.406,2.197-3.314,2.197-5.304   C230.795,113.954,230.005,112.046,228.598,110.639z" fill="#00ea94"/>
-                                <path d="M155.889,61.302c-3.314-2.484-8.017-1.806-10.498,1.51l-71.994,96.184c-2.482,3.316-1.807,8.017,1.51,10.498   c1.348,1.01,2.925,1.496,4.488,1.496c2.282,0,4.537-1.038,6.01-3.006L157.398,71.8C159.881,68.484,159.205,63.784,155.889,61.302z" fill="#00ea94"/>
-                            </g>
-                        </svg>
+                        <img src="./img/logo.svg" alt="logo">
                         <p class="nav__logo--text"> Dawid Kaczmarek</p>
                     </div>
                     <nav class="navbar">
-                        <a class="navbar__link">Strona główna</a>
+                        <a class="navbar__link active">Strona główna</a>
                         <a class="navbar__link">O mnie</a>
                         <a class="navbar__link">Projekty</a>
                         <a class="navbar__link">Kontakt</a>
@@ -84,7 +78,7 @@
                             Mauris non nulla mollis, dapibus tellus sed, ultrices magna.
                             Duis mauris ligula, posuere in venenatis et, sollicitudin .
                         </p>
-                        <button class="about-me__button">Projekty</button>
+                        <a class="about-me__button">Projekty</a>
                     </div>
                     <div class="right-column">
                         <img src="./img/ja.png" alt="Dawid Kaczmarek">
@@ -101,6 +95,9 @@
                         <h1 class="section__title--title">Projekty</h1>
                         <p class="section__title--text">Co zrobiłem?</p>
                     </div>
+
+                <!-- First -->  
+
                 <div class="flex-wrapper">
                     <div class="left-column">
                         <div class="projects__description">
@@ -108,7 +105,7 @@
                                 <span class="projects__description--titleColor">Projekt:</span> Deasign Lab.
                             </h2>
                             <h2 class="projects__description--title">
-                                <span class="projects__description--titleColor">Użyte technologie:</span> html5, css3, RWD.
+                                <span class="projects__description--titleColor">Użyte technologie:</span> HTML5, CSS3, Sass, RWD.
                             </h2>
                             <p class="projects__description--text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -116,11 +113,106 @@
                                 Cras rutrum lacus id posuere consequat.
                                 Nunc fermentum dolor sed hendrerit maximus. Praesent pellentesque 
                             </p>
-                            <button class="projects__description--button">Zobacz</button>
+                            <div class="projects__description--links">
+                                <a class="projects__description--button" href="#">Zobacz</a>
+                                <a class="projects__description--github" href="#">
+                                    <img src="./img/github.svg" alt="github" class="projects__description--svg">
+                                </a>
+                            </div>    
                         </div>
                     </div>
-                    <div class="right-column">
+                    <div class="right-column__projects">
+                        <img src="./img/design_lab.png" class="projects__img">
+                    </div>
+                </div>
 
+                <!-- Second -->
+
+                <div class="flex-wrapper">
+                    <div class="left-column">
+                        <div class="projects__description">
+                            <h2 class="projects__description--title">
+                                <span class="projects__description--titleColor">Projekt:</span> Picture perfect.
+                            </h2>
+                            <h2 class="projects__description--title">
+                                <span class="projects__description--titleColor">Użyte technologie:</span> HTML5, CSS3, Sass, RWD.
+                            </h2>
+                            <p class="projects__description--text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Aliquam at pulvinar mi, quis sagittis enim.
+                                Cras rutrum lacus id posuere consequat.
+                                Nunc fermentum dolor sed hendrerit maximus. Praesent pellentesque 
+                            </p>
+                            <div class="projects__description--links">
+                                <a class="projects__description--button" href="#">Zobacz</a>
+                                <a class="projects__description--github" href="#">
+                                    <img src="./img/github.svg" alt="github" class="projects__description--svg">
+                                </a>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="right-column__projects">
+                        <img src="./img/picture_perfect.png" class="projects__img">
+                    </div>
+                </div>
+
+                <!-- Third -->
+
+                <div class="flex-wrapper">
+                    <div class="left-column">
+                        <div class="projects__description">
+                            <h2 class="projects__description--title">
+                                <span class="projects__description--titleColor">Projekt:</span> Awax.
+                            </h2>
+                            <h2 class="projects__description--title">
+                                <span class="projects__description--titleColor">Użyte technologie:</span> HTML5, CSS3, Flexbox, JavaScript, RWD.
+                            </h2>
+                            <p class="projects__description--text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Aliquam at pulvinar mi, quis sagittis enim.
+                                Cras rutrum lacus id posuere consequat.
+                                Nunc fermentum dolor sed hendrerit maximus. Praesent pellentesque 
+                            </p>
+                            <div class="projects__description--links">
+                                <a class="projects__description--button" href="#">Zobacz</a>
+                                <a class="projects__description--github" href="#">
+                                    <img src="./img/github.svg" alt="github" class="projects__description--svg">
+                                </a>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="right-column__projects">
+                        <img src="./img/awax.png" class="projects__img">
+                    </div>
+                </div>
+
+                <!-- Fourth  -->
+
+                <div class="flex-wrapper">
+                    <div class="left-column">
+                        <div class="projects__description">
+                            <h2 class="projects__description--title">
+                                <span class="projects__description--titleColor">Projekt:</span> Sudoku.
+                            </h2>
+                            <h2 class="projects__description--title">
+                                <span class="projects__description--titleColor">Użyte technologie:</span> HTML5, CSS3, React.
+                            </h2>
+                            <p class="projects__description--text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Aliquam at pulvinar mi, quis sagittis enim.
+                                Cras rutrum lacus id posuere consequat.
+                                Nunc fermentum dolor sed hendrerit maximus. Praesent pellentesque 
+                            </p>
+                            <div class="projects__description--links">
+                                <a class="projects__description--button" href="#">Zobacz</a>
+                                <a class="projects__description--github" href="#">
+                                    <img src="./img/github.svg" alt="github" class="projects__description--svg">
+                                </a>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="right-column__projects">
+                        <img src="./img/sudoku.png" class="projects__img">
                     </div>
                 </div>
             </div>

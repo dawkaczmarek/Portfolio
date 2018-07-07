@@ -1,3 +1,4 @@
+
 /* Navigation */
 #nav 
     background-color: $tertiaryBgColor
@@ -13,8 +14,11 @@
     align-items: center
 
 .nav__logo--text
-    margin-left: 10px
-    
+    margin-left: 10px  
+
+.navbar
+    > .active
+        border-bottom: 2px solid $primaryColor    
 
 .navbar__link
     margin: 0 15px
@@ -83,7 +87,7 @@
     color: #ffffff
     cursor: pointer
     &:hover
-    background-color: $primaryColor + 15
+        background-color: $primaryColor + 15
 
 /* Bullets */
 .bullets__list
@@ -131,7 +135,7 @@
 
 .about-me__text
     line-height: 25px
-    padding: 2%
+    margin-bottom: 5%
 
 .about-me__button
     @include button-properties
@@ -143,6 +147,17 @@
 /* Projects */
 #projects
     padding: $paddingSection
+    .flex-wrapper:nth-child(odd)
+        flex-direction: row-reverse
+        .left-column
+            margin: 0 0 0 2.5%
+        .right-column__projects
+            margin: 0 2.5% 0 0          
+
+.right-column__projects
+    @extend .right-column
+    height: 400px
+    background-color: $tertiaryColor    
 
 .projects__description
     @include font-size(20px)
@@ -155,11 +170,29 @@
     color: $secondaryColor
 
 .projects__description--text
-    margin-bottom: 2%     
+    margin-bottom: 5%     
+
+.projects__description--links
+    display: flex
+    align-items: center
 
 .projects__description--button
     @include button-properties
+    padding-top: 12px
+    padding-bottom: 12px
     background-color: $tertiaryColor
     color: #ffffff
     &:hover
         background-color: $secondaryColor
+
+.projects__description--svg
+    width: 40px
+    margin: 4px 0 0 35%
+    filter: grayscale(100%) brightness(78%)
+    &:hover
+        filter: none
+
+.projects__img
+    width: 80%
+    height: 80%
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5)            

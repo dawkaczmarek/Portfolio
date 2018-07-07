@@ -108,7 +108,7 @@ exports.loadImg = ({
         module: {
             rules: [
                 {
-                    test: /\.(jpg|jpeg|png)$/,
+                    test: /\.(jpg|jpeg|png|svg)$/,
                     exclude: /node_modules/,
                     use: loaders   
                 }
