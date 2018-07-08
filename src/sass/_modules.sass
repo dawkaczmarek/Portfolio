@@ -147,12 +147,16 @@
 /* Projects */
 #projects
     padding: $paddingSection
-    .flex-wrapper:nth-child(odd)
-        flex-direction: row-reverse
-        .left-column
-            margin: 0 0 0 2.5%
-        .right-column__projects
-            margin: 0 2.5% 0 0          
+    .projects__bg
+        &:nth-child(odd)
+            background-color: $secodaryBgColor   
+            .container    
+                .flex-wrapper
+                    flex-direction: row-reverse
+                    .left-column
+                        margin: 0 0 0 2.5%
+                    .right-column__projects
+                        margin: 0 2.5% 0 0          
 
 .right-column__projects
     @extend .right-column

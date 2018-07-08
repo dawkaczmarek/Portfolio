@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -p --env.prod",
-    "start": "nodemon --watch webpack.config.js --watch .browserslistrc --watch .babelrc --watch .browserslistrc --exec \"webpack-dev-server --env.dev\""
+    "start": "nodemon --watch webpack.config.js --watch .browserslistrc --watch .babelrc --watch .browserslistrc --exec \"webpack-dev-server --env.dev\"",
+    "serv": "http-server dist -p 9200 -g"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "html-loader": "^0.5.5",
     "html-minifier": "^3.5.17",
     "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
     "image-webpack-loader": "^4.3.1",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
