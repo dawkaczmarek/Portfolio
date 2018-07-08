@@ -1,7 +1,7 @@
 
 /* Navigation */
 #nav 
-    background-color: $tertiaryBgColor
+    background-color: $secodaryBgColor
 
 .flex-wrapper__nav
     height: 80px
@@ -182,8 +182,6 @@
 
 .projects__description--button
     @include button-properties
-    padding-top: 12px
-    padding-bottom: 12px
     background-color: $tertiaryColor
     color: #ffffff
     &:hover
@@ -199,4 +197,70 @@
 .projects__img
     width: 80%
     height: 80%
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5)            
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5)
+
+/* Contact */
+#contact
+    .container
+        .flex-wrapper
+            flex-direction: column
+
+
+#uForm 
+    display: flex
+    flex-direction: column
+    margin-bottom: 2.5%
+
+#name_Lastname    
+    width: 47%
+
+#email
+    width: 47%    
+
+.id
+    display: flex
+    justify-content: space-between      
+
+input, textarea
+    margin: 5% 0    
+
+textarea
+    overflow-y: hidden
+    height: 24px
+    min-height: 24px
+    border-bottom: 1px solid $primaryFormColor
+    @include regularFont
+    @include font-size(17px)
+    color: $primaryFormColor
+    &::placeholder
+        color: $primaryFormColor
+    &:focus
+        overflow-y: auto
+        height: 75px
+        color: $primaryFormColor        
+
+input[type=text]
+    padding-bottom: 5px
+    border-bottom: 1px solid $primaryFormColor
+    background-color: inherit
+    color: $primaryFormColor
+    &::placeholder
+        color: $primaryFormColor
+    &:focus
+        outline: 0
+        color: $primaryFormColor
+
+
+.contact__button
+    @include button-properties
+    background-color: inherit
+    border: 2px solid $primaryColor
+    color: $primaryColor
+    &:hover
+        background-color: $primaryColor
+        color: #ffffff
+
+#footer
+    background-color: $secodaryBgColor
+    .flex-wrapper
+        padding: 2% 0                   
