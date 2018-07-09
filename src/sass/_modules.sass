@@ -29,6 +29,50 @@
         border-bottom: 2px solid $primaryColor
         cursor: pointer
 
+.navbar__mobile-icon
+    display: none
+    cursor: pointer
+    &:active
+        .navbar__hamburger--bar
+            border-color: $primaryColor
+        .navbar__exit--barLeft, .navbar__exit--barRight
+            background-color: $primaryColor  
+            
+
+
+.navbar__mobile-icon--hamburger
+    display: flex
+    height: 35px
+    width: 35px
+    justify-content: center
+    flex-direction: column
+
+.navbar__hamburger--bar
+    border-bottom: 2px solid $tertiaryColor
+    margin: 3px
+
+.navbar__mobile-icon--exit
+    display: flex
+    height: 35px
+    width: 35px
+    flex-direction: row
+    justify-content: center
+    align-items: center
+
+.navbar__exit--barLeft
+    height: 80%
+    width: 2px
+    margin-right: -1px
+    transform: rotate(50deg)
+    background-color: $tertiaryColor
+
+.navbar__exit--barRight
+    height: 80%
+    width: 2px
+    margin-left: -1px
+    transform: rotate(310deg)
+    background-color: $tertiaryColor   
+
 /* Hero */
 
 .carousel__wrapper
@@ -110,7 +154,9 @@
     border: 2px solid $primaryColor
     cursor: pointer
     &:hover
-        background-color: $primaryColor   
+        background-color: $primaryColor
+    &:active
+        background-color: $primaryColor      
 
 /* Section title */    
 .section__title
@@ -141,8 +187,18 @@
     @include button-properties
     background-color: $tertiaryColor
     color: #ffffff
+    &:link
+        background-color: transparent
+    &:visted
+        background-color: transparent    
     &:hover
-        background-color: $primaryColor            
+        background-color: $primaryColor
+    &:active
+        background-color: $primaryColor    
+
+.about-me__img
+    height: 80%
+    width: 80%                  
 
 /* Projects */
 #projects
@@ -184,15 +240,27 @@
     @include button-properties
     background-color: $tertiaryColor
     color: #ffffff
+    &:link
+        background-color: transparent
+    &:visted
+        background-color: transparent    
     &:hover
+        background-color: $secondaryColor
+    &:active
         background-color: $secondaryColor
 
 .projects__description--svg
     width: 40px
-    margin: 4px 0 0 35%
+    margin: 3.5px 0 0 2.5%
     filter: grayscale(100%) brightness(78%)
+    &:link
+        background-color: transparent
+    &:visted
+        background-color: transparent
     &:hover
         filter: none
+    &:active
+        filter: none    
 
 .projects__img
     width: 80%
@@ -256,9 +324,17 @@ input[type=text]
     background-color: inherit
     border: 2px solid $primaryColor
     color: $primaryColor
+    &:link
+        background-color: transparent
+    &:visted
+        background-color: transparent    
     &:hover
         background-color: $primaryColor
         color: #ffffff
+    &:active
+        background-color: $primaryColor
+        color: #ffffff
+
 
 #footer
     background-color: $secodaryBgColor
