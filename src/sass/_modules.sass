@@ -115,6 +115,7 @@
     @include boldFont
     @include font-size(60px)
     letter-spacing: 5px
+    text-align: center
     color: $primaryTitleColor
 
 .hero__item--titleColor
@@ -183,18 +184,35 @@
     line-height: 25px
     margin-bottom: 5%
 
-.about-me__button
-    @include button-properties
-    background-color: $tertiaryColor
-    color: #ffffff
+.about-me__links
+    display: flex
+    align-items: center
+    justify-content: space-evenly
+
+.about-me__link--title
+    margin-bottom: 3.5px
+
+.about-me__link
+    display: flex
+    flex-direction: column
+    align-items: center
+    &:nth-child(2)
+        margin-left: 2.5%
+        .about-me__link--svg
+            width: 37px
+
+.about-me__link--svg        
+    width: 40px
+    margin: 3.5px 0 0 2.5%
+    filter: grayscale(100%) brightness(78%)
     &:link
         background-color: transparent
     &:visted
-        background-color: transparent    
+        background-color: transparent
     &:hover
-        background-color: $primaryColor
+        filter: none
     &:active
-        background-color: $primaryColor    
+        filter: none 
 
 .about-me__img
     height: 80%
@@ -247,7 +265,7 @@
     &:hover
         background-color: $secondaryColor
     &:active
-        background-color: $secondaryColor
+        background-color: $secondaryColor    
 
 .projects__description--svg
     width: 40px
@@ -339,4 +357,4 @@ input[type=text]
 #footer
     background-color: $secodaryBgColor
     .flex-wrapper
-        padding: 2% 0                   
+        padding: 18px 0                   
