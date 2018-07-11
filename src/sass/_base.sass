@@ -1,15 +1,17 @@
 *
     box-sizing: border-box 
 
+html 
+    font-size: 15px        
+
 body 
     background-color: $primaryBgdColor
     @include regularFont
-    @include font-size(17px)
     letter-spacing: 1px
 
 button
     outline: none
-    user-select: none  
+    user-select: none 
 
 section, footer
     max-width: 1800px
@@ -38,6 +40,7 @@ section:nth-child(3n + 2)
 
 .right-column
     display: flex
+    height: 400px
     width: 50%
     margin-left: 2.5%
     align-items: center

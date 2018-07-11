@@ -24,6 +24,17 @@
                         <a class="navbar__link">Projekty</a>
                         <a class="navbar__link">Kontakt</a>
                     </nav>
+                    <div class="navbar__mobile-icon">
+                        <ul class="navbar__mobile-icon--hamburger" id="hamburger">
+                            <ol class="navbar__hamburger--bar"></ol>
+                            <ol class="navbar__hamburger--bar"></ol>
+                            <ol class="navbar__hamburger--bar"></ol>
+                        </ul>
+                        <div class="navbar__mobile-icon--exit">
+                            <div class="navbar__exit--barLeft"></div>
+                            <div class="navbar__exit--barRight"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -76,12 +87,25 @@
                             Maecenas sit amet diam quis augue ullamcorper fringilla.
                             Pellentesque aliquet ex eget dolor pulvinar, id vestibulum nisl sagittis.
                             Mauris non nulla mollis, dapibus tellus sed, ultrices magna.
-                            Duis mauris ligula, posuere in venenatis et, sollicitudin .
+                            Duis mauris ligula, posuere in venenatis et, sollicitudin.
                         </p>
-                        <a class="about-me__button">Projekty</a>
+                        <div class="about-me__links">
+                            <div class="about-me__link">
+                                <h3 class="about-me__link--title">Profil na githubie</h3>
+                                <a class="about-me__link--svg" href="#">
+                                    <img src="./img/github.svg" alt="github">
+                                </a>
+                            </div>
+                            <div class="about-me__link">
+                                <h3 class="about-me__link--title">Profil na linkedin</h3>
+                                <a class="about-me__link--svg " href="#">
+                                    <img src="./img/linkedin.svg" alt="github">
+                                </a>
+                            </div>
+                        </div>    
                     </div>
                     <div class="right-column">
-                        <img src="./img/ja.png" alt="Dawid Kaczmarek">
+                        <img class="about-me__img" src="./img/ja.png" alt="Dawid Kaczmarek">
                     </div>
                 </div>
             </div>
@@ -118,8 +142,8 @@
                                 </p>
                                 <div class="projects__description--links">
                                     <a class="projects__description--button" href="#">Zobacz</a>
-                                    <a class="projects__description--github" href="#">
-                                        <img src="./img/github.svg" alt="github" class="projects__description--svg">
+                                    <a class="projects__description--svg" href="#">
+                                        <img src="./img/github.svg" alt="github">
                                     </a>
                                 </div>    
                             </div>
@@ -152,8 +176,8 @@
                                 </p>
                                 <div class="projects__description--links">
                                     <a class="projects__description--button" href="#">Zobacz</a>
-                                    <a class="projects__description--github" href="#">
-                                        <img src="./img/github.svg" alt="github" class="projects__description--svg">
+                                    <a class="projects__description--svg" href="#">
+                                        <img src="./img/github.svg" alt="github">
                                     </a>
                                 </div>    
                             </div>
@@ -186,8 +210,8 @@
                                 </p>
                                 <div class="projects__description--links">
                                     <a class="projects__description--button" href="#">Zobacz</a>
-                                    <a class="projects__description--github" href="#">
-                                        <img src="./img/github.svg" alt="github" class="projects__description--svg">
+                                    <a class="projects__description--svg" href="#">
+                                        <img src="./img/github.svg" alt="github">
                                     </a>
                                 </div>    
                             </div>
@@ -220,8 +244,8 @@
                                 </p>
                                 <div class="projects__description--links">
                                     <a class="projects__description--button" href="#">Zobacz</a>
-                                    <a class="projects__description--github" href="#">
-                                        <img src="./img/github.svg" alt="github" class="projects__description--svg">
+                                    <a class="projects__description--svg" href="#">
+                                        <img src="./img/github.svg" alt="github">
                                     </a>
                                 </div>    
                             </div>
@@ -255,6 +279,9 @@
                 </div>
             </div>
         </section>
+
+        <!-- Footer -->
+
         <footer id="footer">
             <div class="flex-wrapper">
                 <p class="footer_text"> Created by Dawid Kaczmarek © 2018</p>
