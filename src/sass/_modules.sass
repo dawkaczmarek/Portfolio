@@ -126,26 +126,28 @@
     color: $primaryColor
 
 .hero__item--button
-    padding: 18px 40px
+    padding: 3% 6%
     margin-bottom: 5%
     border-radius: 30px
     background-color: $primaryColor
-    @include semiboldFont
     @include font-size(18px)
-    letter-spacing: 0.6px
     color: #ffffff
     cursor: pointer
     &:hover
         background-color: $primaryColor + 15
 
 /* Bullets */
+.wrapper__bullet-list
+   position: absolute
+   display: flex
+   justify-content: center
+   align-items: center
+   width: 100%
+   bottom: 8%
+
 .bullets__list
-    position: absolute
     display: flex
     flex-direction: row
-    left: 49.5%
-    transform: translateX(-49.5%)
-    bottom: 8%
     font-size: 0
     cursor: pointer
     > .active
@@ -361,6 +363,7 @@ input[type=text]
 
 
 #footer
+    margin-top: 15px
     background-color: $secodaryBgColor
     .flex-wrapper
         padding: 18px 0                   
