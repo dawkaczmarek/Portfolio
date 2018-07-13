@@ -176,7 +176,7 @@
     color: $primaryTitleColor
 
 .section__title--text
-    margin-top: 0.5%
+    margin-top: 10px
     @include font-size(14px)
     @include lightFont
     text-transform: uppercase
@@ -185,6 +185,7 @@
 /* About me */
 #about-me
     padding: $paddingSection
+    @include font-size(20px)
 
 .about-me__text
     line-height: 25px
@@ -194,6 +195,7 @@
     display: flex
     align-items: center
     justify-content: space-evenly
+    text-align: center
 
 .about-me__link--title
     margin-bottom: 3.5px
@@ -221,8 +223,10 @@
         filter: none 
 
 .about-me__img
-    height: 80%
-    width: 80%                  
+    max-height: 80%
+    width: 80%
+    object-fit: cover
+    object-position: top                 
 
 /* Projects */
 #projects
@@ -236,7 +240,8 @@
                     .left-column
                         margin: 0 0 0 2.5%
                     .right-column__projects
-                        margin: 0 2.5% 0 0          
+                        margin: 0 2.5% 0 0
+                                             
 
 .right-column__projects
     @extend .right-column
@@ -287,9 +292,15 @@
         filter: none    
 
 .projects__img
-    width: 80%
-    height: 80%
+    width: 75%
+    max-height: 75%
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5)
+    object-fit: cover
+    object-position: top
+
+.scale-down
+    object-fit: scale-down
+    background-color: #BBC1C5    
 
 /* Contact */
 #contact
@@ -302,7 +313,7 @@
     display: flex
     flex-direction: column
     width: 100%
-    max-width: 370px
+    max-width: 500px
     margin-bottom: 2.5%
 
 #name_Lastname    

@@ -1,20 +1,41 @@
+          
+@media (max-width: 950px)
+    .right-column__projects
+        background-color: inherit
 
-@media (max-width: 470px)
-    .hero__item--button
-        padding: 5%
-    .hero__item--title
-        font-size: 2.5rem
-    .carousel__item
-        height: 350px   
-    .id
-        flex-direction: column
-        #name_Lastname, #email
-            width: 100%
-    #uForm
-        margin-bottom: 15px        
+@media (max-width: 850px)
+    #about-me
+        .flex-wrapper
+            flex-direction: column
+            .left-column
+                margin: 0
+            .right-column
+                margin: 0
+    .about-me__img
+        width: 100%
+    .left-column, .right-column
+        width: 95%
+    #projects
+        padding: $paddingSection
+        .flex-wrapper
+            flex-direction: column
+            .left-column
+                margin: 0
+            .right-column__projects
+                margin: 0 
+        .projects__bg
+            &:nth-child(odd)
+                background-color: $secodaryBgColor   
+                .container    
+                    .flex-wrapper
+                        flex-direction: column
+                        .left-column
+                            margin: 0
+                        .right-column__projects
+                            margin: 0            
+    .projects__img
+        width: 100%    
 
-        
-    
 @media (max-width: 800px)
     #nav 
         position: fixed
@@ -32,5 +53,27 @@
     .navbar__mobile-icon
         display: flex
         .navbar__mobile-icon--exit
-            display: none
-                      
+            display: none    
+
+@media (max-width: 550px)
+    html 
+        font-size: 14px
+
+
+@media (max-width: 470px)
+    .projects__description--links
+        justify-content: space-evenly  
+    .left-column, .right-column
+        width: 100%
+    .hero__item--button
+        padding: 5%
+    .hero__item--title
+        font-size: 2.5rem
+    .carousel__item
+        height: 350px   
+    .id
+        flex-direction: column
+        #name_Lastname, #email
+            width: 100%
+    #uForm
+        margin-bottom: 15px             
