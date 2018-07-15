@@ -2,6 +2,31 @@
 @media (max-width: 950px)
     .right-column__projects
         background-color: inherit
+    .navbar__link
+        &:hover
+            border-bottom: none
+    .hero__item--button
+        &:hover
+            background-color: $primaryColor
+        &:active
+            background-color: $primaryColor - 15
+    .about-me__link--svg, .projects__description--svg
+        &:hover
+            filter: grayscale(100%) brightness(78%)
+        &:active
+            filter: none
+    .projects__description--button
+        &:hover
+            background-color: $tertiaryColor
+        &:active
+            background-color: $secondaryColor
+    .contact__button
+        &:hover
+            background-color: inherit
+            color: $primaryColor
+        &:active
+            background-color: $primaryColor
+            color: #ffffff                                 
 
 @media (max-width: 850px)
     #about-me

@@ -27,11 +27,18 @@
 .navbar__link
     margin: 0 15px
     padding-bottom: 10px
+    color: $primaryPragaphColor
+    cursor: pointer
     &:last-child
         margin-right: 0
+    &:link
+        border-bottom: none
+    &:visted
+        border-bottom: none    
     &:hover
         border-bottom: 2px solid $primaryColor
-        cursor: pointer
+    &:active
+        color: $primaryColor     
 
 .navbar__mobile-icon
     display: none
@@ -132,9 +139,11 @@
     background-color: $primaryColor
     @include font-size(18px)
     color: #ffffff
-    cursor: pointer
+    cursor: pointer    
     &:hover
         background-color: $primaryColor + 15
+    &:active
+        background-color: $primaryColor - 15    
 
 /* Bullets */
 .wrapper__bullet-list
@@ -160,6 +169,10 @@
     border-radius: 50%
     border: 2px solid $primaryColor
     cursor: pointer
+    &:link
+        background-color: transparent
+    &:visted
+        background-color: transparent
     &:hover
         background-color: $primaryColor
     &:active
