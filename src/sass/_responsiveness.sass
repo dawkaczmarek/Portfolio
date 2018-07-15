@@ -1,34 +1,47 @@
           
 @media (max-width: 950px)
+
     .right-column__projects
         background-color: inherit
+
     .navbar__link
         &:hover
             border-bottom: none
+
     .hero__item--button
         &:hover
             background-color: $primaryColor
         &:active
             background-color: $primaryColor - 15
+
+    .bullet
+        &:hover
+            background-color: inherit
+        &:active
+            background-color: $primaryColor     
+
     .about-me__link--svg, .projects__description--svg
         &:hover
             filter: grayscale(100%) brightness(78%)
         &:active
             filter: none
+
     .projects__description--button
         &:hover
             background-color: $tertiaryColor
         &:active
             background-color: $secondaryColor
+
     .contact__button
         &:hover
             background-color: inherit
             color: $primaryColor
         &:active
             background-color: $primaryColor
-            color: #ffffff                                 
+            color: #ffffff                                
 
 @media (max-width: 850px)
+
     #about-me
         .flex-wrapper
             flex-direction: column
@@ -40,6 +53,7 @@
         width: 100%
     .left-column, .right-column
         width: 95%
+
     #projects
         padding: $paddingSection
         .flex-wrapper
@@ -62,19 +76,17 @@
         width: 100%    
 
 @media (max-width: 800px)
-    #nav 
-        position: fixed
-        width: 100%
-        z-index: 9999
-        opacity: 0.95
-    #hero
-        padding-top: 80px
+
     .nav__logo--text
         display: none
+
     .nav__logo--textR
+
         display: flex 
+
     .navbar
         display: none
+
     .navbar__mobile-icon
         display: flex
         .navbar__mobile-icon--exit
@@ -86,19 +98,26 @@
 
 
 @media (max-width: 470px)
+
     .projects__description--links
         justify-content: space-evenly  
+
     .left-column, .right-column
         width: 100%
+
     .hero__item--button
         padding: 5%
+
     .hero__item--title
         font-size: 2.5rem
+
     .carousel__item
-        height: 350px   
+        height: 350px  
+ 
     .id
         flex-direction: column
         #name_Lastname, #email
             width: 100%
+
     #uForm
         margin-bottom: 15px             

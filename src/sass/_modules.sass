@@ -1,6 +1,11 @@
-
+  
 /* Navigation */
+
 #nav 
+    position: fixed
+    width: 100%
+    z-index: 9999
+    opacity: 0.95
     background-color: $secodaryBgColor
 
 .flex-wrapper__nav
@@ -85,7 +90,8 @@
     background-color: $tertiaryColor   
 
 /* Hero */
-
+#hero
+    padding-top: 80px    
 .carousel__wrapper
     position: relative
     overflow: hidden
@@ -139,7 +145,11 @@
     background-color: $primaryColor
     @include font-size(18px)
     color: #ffffff
-    cursor: pointer    
+    cursor: pointer
+    &:link
+        background-color: none
+    &:visted
+        background-color: $primaryColor
     &:hover
         background-color: $primaryColor + 15
     &:active
@@ -169,10 +179,6 @@
     border-radius: 50%
     border: 2px solid $primaryColor
     cursor: pointer
-    &:link
-        background-color: transparent
-    &:visted
-        background-color: transparent
     &:hover
         background-color: $primaryColor
     &:active
@@ -317,6 +323,7 @@
 
 /* Contact */
 #contact
+    padding: $paddingSection
     .container
         .flex-wrapper
             flex-direction: column
