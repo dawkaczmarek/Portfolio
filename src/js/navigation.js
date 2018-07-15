@@ -1,7 +1,11 @@
 $(document).ready(function(){
+
+/** create smooth scroll **/    
+
     const $animateElement = $('html, body');
 
-/* smoth scroll function */
+/* smooth scroll function */
+
     function smoothScroll(event, element) {
         event.preventDefault();
         event.stopPropagation();
@@ -15,8 +19,9 @@ $(document).ready(function(){
     }  
 
 /* add click event for <a> */
+
     $('a[href^="#"]').click(function(e) {
         smoothScroll(e, $(this));
     });
-  
+
 });
