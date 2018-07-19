@@ -1,29 +1,35 @@
-$(document).ready(function(){
+$(document).ready(function (){
 
 /** creat click event for mobile menu **/
 
-    $(window).resize(function() {
-        if($(this).width() >= 800) {
+    const $iconHamburger = $('.navbar__mobile-icon--hamburger');
+    const $navbar = $('.navbar');
+    const $iconExit = $('.navbar__mobile-icon--exit');
+    const DELAY_ANIMATE_NAV = 500;
+    const WIDTH_WINDOW = 800;
+
+    $(window).resize(function () {
+        if ($(this).width() >= WIDTH_WINDOW) {
             $('[style^=display]').removeAttr('style');
         }
     });
 
-    $('.navbar__mobile-icon--hamburger').click(function() {
+    $iconHamburger.click(function () {
         $('.flex-wrapper__nav').animate({
             height: "150px"
-        }, 500);
-        $('.navbar__mobile-icon--hamburger').attr('style','display:none')
-        $('.navbar').attr('style', 'display:flex; flex-direction: column; align-items: center;')
-        $('.navbar__mobile-icon--exit').attr('style', 'display:flex');
+        }, DELAY_ANIMATE_NAV);
+        $iconHamburger.attr('style','display:none')
+        $navbar.attr('style', 'display:flex; flex-direction: column; align-items: center;')
+        $iconExit.attr('style', 'display:flex');
     });
 
-    $('.navbar__mobile-icon--exit').click(function() {
+    $iconExit.click(function () {
         $('.flex-wrapper__nav').animate({
             height: "80px"
-        }, 500);
-        $('.navbar__mobile-icon--hamburger').attr('style','display:flex')
-        $('.navbar').attr('style', 'display:none')
-        $('.navbar__mobile-icon--exit').attr('style', 'display:none');
+        }, DELAY_ANIMATE_NAV);
+        $iconHamburger.attr('style','display:flex')
+        $navbar.attr('style', 'display:none')
+        $iconExit.attr('style', 'display:none');
     });
 
 /** create smooth scroll efects **/ 
