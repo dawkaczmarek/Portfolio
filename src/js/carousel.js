@@ -10,6 +10,11 @@ $(document).ready(function() {
         const lastMargin = -100 * ($item.length - 1);
         let interval;
 
+        $item.each(function () {
+            $bullet.append('<li></li>').find('li').addClass('bullet');
+            $('.bullet').eq(0).addClass('active');
+        });
+
         function slide () {
             const actualMargin = Number($inner[0].style.marginLeft.split(/%|vw/).join(''));
             console.log(actualMargin);
