@@ -8,34 +8,79 @@ $(document).ready(function() {
         const $item = $this.find('.carousel__item');
         const $bullet = $this.find('.bullets__list');
         const lastMargin = -100 * ($item.length - 1);
+
+        /* Settings delay and duration carousel */
+        const  options = {
+            delay: 4000,
+            back_slide_delay: 600,
+            next_slide_duration: 500,
+            current_slide_duration:  750,
+        }
+        
+        let unit = "vw";
+        let counter = 0;
         let interval;
 
-        function slide () {
-            const actualMargin = Number($inner[0].style.marginLeft.split(/%|vw/).join(''));
-            console.log(actualMargin);
-            let unit;
+        /* add bullets */
+        $item.each(function () {
+            $bullet.append('<li></li>').find('li').addClass('bullet');
+            $('.bullet').eq(0).addClass('active');
+        });
+        
+        /* add click evnet on bullets*/
+        $this.find('.bullet').each(function (index) {
+           $(this).click(function () {
+                const toMargin = -100 * index;
+                counter = index;
+                clearInterval(interval);
+                animateSlide (toMargin, options.current_slide_duration, unit)
 
+           })
+       })
+
+
+       
+        function slide () {
+
+            /* Get actual margin left '.inner' remove unit and change string to number */
+            const actualMargin = Number($inner[0].style.marginLeft.split(/%|vw/).join(''));
+
+            /*Check '.inner' widht. When is bigger then 1800 change unit to %*/
             if ($this.width() >= 1800) {
                 unit = '%';
             } else {
                 unit ='vw';
             }
 
-          
+            activeBullet(actualMargin, counter);
+            
+            /* Check  '.inner' actual margin*/
             if (actualMargin <= lastMargin) {
+                counter = 0;
                 interval = setTimeout(function () {
-                    animateSlide("0", 500, unit);
-                 }, 4000)    
+                    animateSlide("0", options.back_slide_delay, unit);
+                 }, options.delay)    
             } else {
+                counter++
                 interval = setTimeout(function () {
-                    animateSlide("-=100", 500, unit);
-                 }, 4000) 
+                    animateSlide("-=100", options.next_slide_duration, unit);
+                },  options.delay) 
             }
         }
 
+        /* Funtcion to add and remove class active */
+        function activeBullet (margin, index) {
+            
+            if (margin >= lastMargin) {
+                $this.find('.bullet').removeClass('active')
+                $this.find('.bullet').eq(index).addClass('active');
+            }
 
-        function animateSlide(margin, duration, slideUnit)  {
-            $inner.animate({
+        }
+
+        /* Function to animate slide */
+        function animateSlide (margin, duration, slideUnit)  {
+            $inner.stop().animate({
                 marginLeft: margin + slideUnit
             }, duration, function() {
                 slide();
@@ -47,121 +92,3 @@ $(document).ready(function() {
     });
 
 });
-
-
- /*
-        $item.each(function () {
-            $bullet.append('<li></li>').find('li').addClass('bullet');
-        });
-
-   
-        function eventBullet () {
-        
-            $('.bullet').each(function (index) {
-                $(this).click(function (){
-                    const nextMargin = `${-100 * index}`;
-                    let unit;
-
-                    if ($this.width() == 1800) {
-                        unit = "%";
-                    } else {
-                        unit = "vw";
-                    }
-
-                    clearInterval(interval);
-                    $inner.stop();
-
-                    $inner.animate({
-                        marginLeft: nextMargin + unit,
-                    }, 750, function () {
-                        if ($inner[0].style.marginLeft === "-200" + unit) {
-    
-                            clearInterval(interval);
-                            setTimeout(function() {
-        
-                                $inner.animate({
-                                    marginLeft: "0",
-                                }, 750);
-        
-                                nextSlide(0);
-        
-                            }, 3000);
-
-                        } else {
-                            clearInterval(interval);
-                            setTimeout(function() {
-        
-                                $inner.animate({
-                                    marginLeft: "0",
-                                }, 750);
-        
-                                nextSlide(index);
-        
-                            }, 3000);
-                        }
-
-                    })
-
-                });
-            });
-        }
-
-
-        function activeButton (index) {
-            if (index == 0) {
-                $('.bullet').removeClass('active');
-                $('.bullet').eq(index).addClass('active'); 
-            } else  {
-                $('.bullet').eq(index - 1).removeClass('active');
-                $('.bullet').eq(index).addClass('active'); 
-            }
-        }
-
-       function nextSlide(actualIndex) {
-            let currentIndex = actualIndex;
-            activeButton(currentIndex);
-            interval = setInterval (function() {
-
-                let unit;
-
-                    if ($this.width() == 1800) {
-                        unit = "%";
-                    } else {
-                        unit = "vw";
-                    }
-                   
-                
-                currentIndex = currentIndex + 1;
-              ;
-
-                $inner.animate({
-                    marginLeft: "-=100" + unit,
-                    start:  activeButton(currentIndex),
-                }, 750, function() {
-                    if ($inner[0].style.marginLeft === "-200" + unit) {
-    
-                    clearInterval(interval);
-                    setTimeout(function() {
-
-                        $inner.animate({
-                            marginLeft: "0",
-                            start: activeButton(currentIndex),
-                        }, 750);
-
-                        nextSlide(0);
-
-                    }, 3000);
-
-                    } else {
-                        clearInterval(interval);
-                        nextSlide(index);
-                    } 
-                });
-
-            }, 3000);    
-        }
-
-        eventBullet();
-        nextSlide(0);
-
-        */
