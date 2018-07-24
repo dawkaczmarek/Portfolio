@@ -21,17 +21,11 @@ $(document).ready(function() {
         let counter = 0;
         let interval;
 
-<<<<<<< HEAD
-=======
         /* add bullets */
->>>>>>> David
         $item.each(function () {
             $bullet.append('<li></li>').find('li').addClass('bullet');
             $('.bullet').eq(0).addClass('active');
         });
-<<<<<<< HEAD
-
-=======
         
         /* add click evnet on bullets*/
         $this.find('.bullet').each(function (index) {
@@ -46,7 +40,6 @@ $(document).ready(function() {
 
 
        
->>>>>>> David
         function slide () {
 
             /* Get actual margin left '.inner' remove unit and change string to number */
