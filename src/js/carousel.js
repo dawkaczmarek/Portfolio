@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-    $('.carousel__wrapper').each(function (index) {
+    $('.carousel__wrapper').each(function(index) {
 
         const $this = $(this);
         const $inner = $this.find('.carousel__inner');
@@ -22,18 +22,18 @@ $(document).ready(function() {
         let interval;
 
         /* add bullets */
-        $item.each(function () {
+        $item.each(function() {
             $bullet.append('<li></li>').find('li').addClass('bullet');
             $('.bullet').eq(0).addClass('active');
         });
         
         /* add click evnet on bullets*/
-        $this.find('.bullet').each(function (index) {
+        $this.find('.bullet').each(function(index) {
            $(this).click(function () {
                 const toMargin = -100 * index;
                 counter = index;
                 clearInterval(interval);
-                animateSlide (toMargin, options.current_slide_duration, unit)
+                animateSlide (toMargin, options.current_slide_duration, unit);
 
            })
        })
@@ -57,14 +57,14 @@ $(document).ready(function() {
             /* Check  '.inner' actual margin*/
             if (actualMargin <= lastMargin) {
                 counter = 0;
-                interval = setTimeout(function () {
+                interval = setTimeout(function() {
                     animateSlide("0", options.back_slide_delay, unit);
-                 }, options.delay)    
+                 }, options.delay);   
             } else {
-                counter++
-                interval = setTimeout(function () {
+                counter++;
+                interval = setTimeout(function() {
                     animateSlide("-=100", options.next_slide_duration, unit);
-                },  options.delay) 
+                },  options.delay); 
             }
         }
 
@@ -72,7 +72,7 @@ $(document).ready(function() {
         function activeBullet (margin, index) {
             
             if (margin >= lastMargin) {
-                $this.find('.bullet').removeClass('active')
+                $this.find('.bullet').removeClass('active');
                 $this.find('.bullet').eq(index).addClass('active');
             }
 
