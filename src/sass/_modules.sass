@@ -336,12 +336,11 @@
     flex-direction: column
     width: 100%
     max-width: 500px
-    margin-bottom: 2.5%
 
 #name_Lastname    
     width: 47%
 
-#email
+#mail
     width: 47%    
 
 .id
@@ -378,6 +377,14 @@ input[type=text]
         outline: 0
         color: $primaryFormColor
 
+.errors
+    display: flex
+    flex-direction: column
+    max-width: 500px
+    margin: 2.5% 0
+    color: $error
+    > span
+        margin: 10px 0    
 
 .contact__button
     @include button-properties
