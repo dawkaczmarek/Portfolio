@@ -5,7 +5,7 @@ const HTMLPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 exports.loadJS = ({
-    test = /\.js$/,
+    test = /\.(js)$/,
     exclude = /node_modules/,
 } = {}) => {
     return {
@@ -34,7 +34,7 @@ exports.loadSASS = ({
         module: {
             rules: [
                 {
-                    test: /\.sass$/,
+                    test: /\.(sass)$/,
                     exclude: /node_modules/,
                     use: [
                             
@@ -151,7 +151,7 @@ exports.loadHTML = ({
         module: {
             rules: [
                 {
-                    test: /\.html$/,
+                    test: /\.(html)$/,
                     exclude: /node_modules/,
                     use: [
                         {

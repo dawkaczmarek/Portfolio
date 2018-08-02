@@ -267,14 +267,15 @@
                     <p class="section__title--text">Napisz do mnie</p>
                 </div>
                 <div class="flex-wrapper">
-                    <form action="#" method="get" id="uForm">
+                    <form action="./../server/server.php" method="post" id="uForm">
                         <div class="id">
                             <input id="name_Lastname" type="text" name="name" placeholder="Imię i Nazwisko">
-                            <input id="email" type="text" name="email" placeholder="Email">
+                            <input id="mail" type="text" name="mail" placeholder="Email example@gmail.com">
                         </div>    
                         <input id="subject" type="text" name="subject" placeholder="Temat">
-                        <textarea id="massage" rows="4" cols="50" placeholder="Wiadomość"></textarea>
+                        <textarea id="massage" name="massage" rows="1" cols="50" placeholder="Wiadomość"></textarea>
                     </form>
+                    <div class="errors"></div>
                     <button class="contact__button" type="submit" form="uForm">Wyślij</button>
                 </div>
             </div>

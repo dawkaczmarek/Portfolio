@@ -7,6 +7,8 @@
     z-index: 9999
     opacity: 0.95
     background-color: $secodaryBgColor
+    left: 50%
+    transform: translateX(-50%)
 
 .flex-wrapper__nav
     height: 80px
@@ -334,12 +336,11 @@
     flex-direction: column
     width: 100%
     max-width: 500px
-    margin-bottom: 2.5%
 
 #name_Lastname    
     width: 47%
 
-#email
+#mail
     width: 47%    
 
 .id
@@ -354,15 +355,16 @@ textarea
     height: 24px
     min-height: 24px
     border-bottom: 1px solid $primaryFormColor
+    transition: height 1s
     @include regularFont
     @include font-size(17px)
     color: $primaryFormColor
     &::placeholder
         color: $primaryFormColor
     &:focus
-        overflow-y: auto
-        height: 75px
-        color: $primaryFormColor        
+        overflow-y: hidden
+        height: 75px 
+        color: $primaryFormColor           
 
 input[type=text]
     padding-bottom: 5px
@@ -375,6 +377,14 @@ input[type=text]
         outline: 0
         color: $primaryFormColor
 
+.errors
+    display: flex
+    flex-direction: column
+    max-width: 500px
+    margin: 2.5% 0
+    color: $error
+    > span
+        margin: 10px 0    
 
 .contact__button
     @include button-properties
