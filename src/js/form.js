@@ -81,7 +81,7 @@ $(document).ready(function() {
         const $details = $('#uForm').serialize();
         console.log($details);
         if ($name.hasClass('valid') && $mail.hasClass('valid') && $subject.hasClass('valid') && $massage.hasClass('valid')) {
-            $.post('http://localhost:80/server/server.php', $details, function(data){
+            $.post('./../../server/server.php', $details, function(data){
                 console.log(data);
                 alert(data);
             });
