@@ -28,6 +28,10 @@ const prod = merge([
                 progressive: true,
                 quality: 80
             },
+            pngquant: {
+                quality: '65-90',
+                speed: 4
+            },
             web: {
                 quality: 80
             }
