@@ -27,10 +27,6 @@
     margin-left: 10px
     display: none 
 
-.navbar
-    > .active
-        border-bottom: 2px solid $primaryColor    
-
 .navbar__link
     margin: 0 15px
     padding-bottom: 10px
@@ -40,12 +36,17 @@
         margin-right: 0
     &:link
         border-bottom: none
-    &:visted
-        border-bottom: none    
+    &:visited
+        border-bottom: none 
     &:hover
         border-bottom: 2px solid $primaryColor
     &:active
         color: $primaryColor     
+
+.navbar
+    > .active
+        border-bottom: 2px solid $primaryColor    
+
 
 .navbar__mobile-icon
     display: none
@@ -130,10 +131,10 @@
     flex-direction: column
 
 .hero__item--title
-    margin-bottom: 15%
+    max-width: 800px
     @include boldFont
-    @include font-size(60px)
-    letter-spacing: 5px
+    @include font-size(40px)
+    letter-spacing: 3px
     text-align: center
     color: $primaryTitleColor
 
@@ -141,16 +142,16 @@
     color: $primaryColor
 
 .hero__item--button
-    padding: 3% 6%
+    padding: 20px 40px
+    margin-top: 10%
     margin-bottom: 5%
     border-radius: 30px
-    background-color: $primaryColor
     @include font-size(18px)
     color: #ffffff
     cursor: pointer
     &:link
-        background-color: none
-    &:visted
+        background-color: $primaryColor
+    &:visited
         background-color: $primaryColor
     &:hover
         background-color: $primaryColor + 15
@@ -236,7 +237,7 @@
     filter: grayscale(100%) brightness(78%)
     &:link
         background-color: transparent
-    &:visted
+    &:visited
         background-color: transparent
     &:hover
         filter: none
@@ -289,12 +290,11 @@
 
 .projects__description--button
     @include button-properties
-    background-color: $tertiaryColor
     color: #ffffff
     &:link
-        background-color: transparent
-    &:visted
-        background-color: transparent    
+        background-color: $tertiaryColor
+    &:visited
+        background-color: $tertiaryColor  
     &:hover
         background-color: $secondaryColor
     &:active
@@ -306,7 +306,7 @@
     filter: grayscale(100%) brightness(78%)
     &:link
         background-color: transparent
-    &:visted
+    &:visited
         background-color: transparent
     &:hover
         filter: none
@@ -394,7 +394,7 @@ input[type=text]
     color: $primaryColor
     &:link
         background-color: transparent
-    &:visted
+    &:visited
         background-color: transparent    
     &:hover
         background-color: $primaryColor
