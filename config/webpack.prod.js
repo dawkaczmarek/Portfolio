@@ -45,6 +45,10 @@ const prod = merge([
         },
         minimizeOptionsHtml: true
     }),
+    parts.CopyWebpackPlugin({
+        from: 'server/',
+        to: 'server/'
+    }),
     parts.ProvidePlugin(),
     parts.HashedModulePlugin()
 

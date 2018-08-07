@@ -32,6 +32,10 @@ const prod = merge([
         minimizeOptionsHtml: false
     }),
     parts.ProvidePlugin(),
+    parts.CopyWebpackPlugin({
+        from: 'server/',
+        to: 'server/'
+    }),
     parts.devServer({
         contentBase: path.join(__dirname, '../dist')
     }),
