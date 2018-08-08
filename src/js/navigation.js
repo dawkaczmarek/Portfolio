@@ -9,27 +9,35 @@ $(document).ready(function (){
     const WIDTH_WINDOW = 800;
 
     $(window).resize(function () {
+
         if ($(this).width() >= WIDTH_WINDOW) {
             $('[style^=display]').removeAttr('style');
+            $('.flex-wrapper__nav').stop().animate({
+                height: "80px"
+            }, DELAY_ANIMATE_NAV)
         }
+        
     });
 
     $iconHamburger.click(function () {
-        $('.flex-wrapper__nav').animate({
+
+        $('.flex-wrapper__nav').stop().animate({
             height: "150px"
-        }, DELAY_ANIMATE_NAV);
-        $iconHamburger.attr('style','display:none')
-        $navbar.attr('style', 'display:flex; flex-direction: column; align-items: center;')
-        $iconExit.attr('style', 'display:flex');
+        }, DELAY_ANIMATE_NAV, function() {
+            $iconHamburger.attr('style','display:none')
+            $navbar.attr('style', 'display:flex; flex-direction: column; align-items: center;')
+            $iconExit.attr('style', 'display:flex');
+        });
     });
 
     $iconExit.click(function () {
-        $('.flex-wrapper__nav').animate({
-            height: "80px"
-        }, DELAY_ANIMATE_NAV);
+
         $iconHamburger.attr('style','display:flex')
         $navbar.attr('style', 'display:none')
         $iconExit.attr('style', 'display:none');
+        $('.flex-wrapper__nav').stop().animate({
+            height: "80px"
+        }, DELAY_ANIMATE_NAV,);
     });
 
 /** create smooth scroll efects **/ 
@@ -41,6 +49,7 @@ $(document).ready(function (){
 /* smoth scroll function */
 
     function smoothScroll(event, element) {
+
         event.preventDefault();
         event.stopPropagation();
         const $hrefLink =  element.attr('href');
@@ -59,13 +68,16 @@ $(document).ready(function (){
 /* add and remove .actvie into navigation */    
 
     $(window).scroll(function() {
+
         const $windowPosition = $(window).scrollTop();
+
         $('section[id]').each(function(index) {
-            if($(this).position().top - $nav.height()  <= $windowPosition + 10) {
+            if($(this).position().top - $nav.height() <= $windowPosition + 10) {
                 $('.navbar__link.active').removeClass('active');
                 $('.navbar__link').eq(index - 1).addClass('active');
             }
         });
+
     }).scroll();
 
 });

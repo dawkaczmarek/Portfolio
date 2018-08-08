@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Header set Access-Control-Allow-Origin: *
+=======
+Header set Access-Control-Allow-Origin "*"
+>>>>>>> David

@@ -6,7 +6,9 @@
 
     .navbar__link
         &:hover
-            border-bottom: none
+            border-bottom: 2px solid $primaryColor
+        &:active
+            color: $primaryColor  
 
     .hero__item--button
         &:hover
@@ -14,13 +16,7 @@
         &:active
             background-color: $primaryColor - 15
 
-    .bullet
-        &:hover
-            background-color: inherit
-        &:active
-            background-color: $primaryColor     
-
-    .about-me__link--svg, .projects__description--svg
+    .about-me__link--svg > img, .projects__description--svg > img
         &:hover
             filter: grayscale(100%) brightness(78%)
         &:active
@@ -32,7 +28,7 @@
         &:active
             background-color: $secondaryColor
 
-    .contact__button
+    .contact__button, .massage__button
         &:hover
             background-color: inherit
             color: $primaryColor

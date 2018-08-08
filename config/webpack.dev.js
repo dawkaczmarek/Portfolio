@@ -3,7 +3,7 @@ const merge = require('webpack-merge');
 const parts = require('./webpack.parts');
 
 const config = {
-    mode: 'production',
+    mode: 'development',
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
@@ -32,6 +32,10 @@ const prod = merge([
         minimizeOptionsHtml: false
     }),
     parts.ProvidePlugin(),
+    parts.CopyWebpackPlugin({
+        from: './src/server/',
+        to: path.join(__dirname, '../dist/server')
+    }),
     parts.devServer({
         contentBase: path.join(__dirname, '../dist')
     }),

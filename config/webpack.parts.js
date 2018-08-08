@@ -1,6 +1,7 @@
 const BrowserWebpackPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ClearWebpack = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
@@ -171,6 +172,21 @@ exports.loadHTML = ({
     }
 }
 
+exports.CopyWebpackPlugin = ({
+    from,
+    to
+} = {}) => {
+    return {
+        plugins: [
+            new CopyWebpackPlugin([
+                {
+                    from,
+                    to
+                }
+            ])
+        ]
+    }
+}
 
 exports.ClearWebpack = ({ paths, options }) => {
 
@@ -207,6 +223,12 @@ exports.HashedModulePlugin = () => {
 exports.devServer = ({
     port = 9001,
     hot = true,
+    proxy = {
+        '/server/server.php': {
+            target: 'http://localhost:0080/Portfolio/src',
+        }
+    },
+    historyApiFallback = true,
     overlay = true,
     contentBase
 } = {}) => {
@@ -225,6 +247,8 @@ exports.devServer = ({
             port,
             contentBase,
             hot,
+            proxy,
+            historyApiFallback,
             overlay
         },
         plugins
