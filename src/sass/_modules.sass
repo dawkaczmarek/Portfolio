@@ -181,11 +181,7 @@
     margin-left: 9px
     border-radius: 50%
     border: 2px solid $primaryColor
-    cursor: pointer
-    &:hover
-        background-color: $primaryColor
-    &:active
-        background-color: $primaryColor      
+    cursor: pointer     
 
 /* Section title */    
 .section__title
@@ -231,9 +227,11 @@
         .about-me__link--svg
             width: 37px
 
-.about-me__link--svg        
-    width: 40px
+.about-me__link--svg
     margin: 3.5px 0 0 2.5%
+
+.about-me__link--svg > img      
+    width: 40px
     filter: grayscale(100%) brightness(78%)
     &:link
         background-color: transparent
@@ -301,8 +299,10 @@
         background-color: $secondaryColor    
 
 .projects__description--svg
-    width: 40px
     margin: 3.5px 0 0 2.5%
+
+.projects__description--svg > img
+    width: 40px
     filter: grayscale(100%) brightness(78%)
     &:link
         background-color: transparent

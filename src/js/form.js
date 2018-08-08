@@ -81,12 +81,11 @@ $(document).ready(function() {
         const $details = $('#uForm').serialize();
         console.log($details);
         if ($name.hasClass('valid') && $mail.hasClass('valid') && $subject.hasClass('valid') && $massage.hasClass('valid')) {
-            $.post('./../../server/server.php', $details, function(data){
-                console.log(data);
+            $.post('server/server.php', $details, function(data) {
                 alert(data);
             });
         } else {
-           alert('Nie wysłano emaila. Proszę wypełnić poprawnie pola w formularzu')
+           alert('Nie wysłano emaila. Proszę wypełnić poprawnie pola w formularzu');
         }
     });
 });

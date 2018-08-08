@@ -29,13 +29,20 @@ $(document).ready(function() {
         
         /* add click evnet on bullets*/
         $this.find('.bullet').each(function(index) {
-           $(this).click(function () {
+           $(this)
+           .click(function () {
                 const toMargin = -100 * index;
                 counter = index;
                 clearInterval(interval);
                 animateSlide (toMargin, options.current_slide_duration, unit);
 
            })
+           .mouseenter(function() {
+                $(this).css('background-color','#00ea94');
+           })
+           .mouseleave(function() {
+                $(this).removeAttr('style');
+           }) 
        })
 
 
@@ -72,10 +79,12 @@ $(document).ready(function() {
         function activeBullet (margin, index) {
             
             if (margin >= lastMargin) {
+                if ($(window.width > 800)) {
+                    $this.find('.bullet').removeAttr('style');
+                }
                 $this.find('.bullet').removeClass('active');
                 $this.find('.bullet').eq(index).addClass('active');
-            }
-
+            } 
         }
 
         /* Function to animate slide */

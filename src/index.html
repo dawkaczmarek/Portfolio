@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body>
+    <body ontouchstart="">
 
         <!-- Navigation -->
 
@@ -20,7 +20,7 @@
                         <p class="nav__logo--textR">DK</p>
                     </div>
                     <nav class="navbar">
-                        <a class="navbar__link active" href="#hero">Strona główna</a>
+                        <a class="navbar__link active" href="#hero">Home</a>
                         <a class="navbar__link" href="#about-me">O mnie</a>
                         <a class="navbar__link" href="#projects">Projekty</a>
      
@@ -84,8 +84,8 @@
                     <div class="left-column">
                         <p class="about-me__text">
                             Moja przygoda z programowaniem zaczęła się od książki nieoficjalny pordręcznik  HTML5 autorstwa Matthew MacDonald.
-                            Na tyle mnie ten świat programowania zainteresował, że postanowiłem w tej dziedzinie się doskonalić.
-                            Po licznych kursach i książkach postanowiłem zostać programistą.
+                            Dzięki tej książce postanowiłem doskonalić się w tej dziedzinie.
+                            Po licznych kursach i książkach postanowiłem zostać front-end developerem.
                         </p>
                         <div class="about-me__links">
                             <div class="about-me__link">
@@ -133,7 +133,7 @@
                                     <span class="projects__description--titleColor">Użyte technologie:</span> HTML5, Sass, RWD.
                                 </h2>
                                 <p class="projects__description--text">
-                                    Projekt wykonany na podstawie layoutu wykonanego przez kodillę.
+                                    Projekt wykonany na podstawie layoutu wykonanego przez Kodillę.
                                     Jest to strona typu One Page. 
                                 </p>
                                 <div class="projects__description--links">
@@ -165,7 +165,7 @@
                                     <span class="projects__description--titleColor">Użyte technologie:</span> HTML5, Sass, RWD.
                                 </h2>
                                 <p class="projects__description--text">
-                                    Projekt wykonany na podstawie layoutu wykonanego przez kodillę.
+                                    Projekt wykonany na podstawie layoutu wykonanego przez Kodillę.
                                     Jest to strona typu One Page.  
                                 </p>
                                 <div class="projects__description--links">
@@ -197,7 +197,7 @@
                                     <span class="projects__description--titleColor">Użyte technologie:</span> HTML5, Flexbox, Sass, JavaScript, RWD.
                                 </h2>
                                 <p class="projects__description--text">
-                                    Projekt wykonany na podstawie layoutu wykonanego przez kodillę.
+                                    Projekt wykonany na podstawie layoutu wykonanego przez Kodillę.
                                     Jest to strona typu One Page. Nawigacja strony i galerii wykonana została 
                                     w JavaScript tak samo jak karuzela. 
                                 </p>
@@ -227,7 +227,7 @@
                                     <span class="projects__description--titleColor">Projekt:</span> Sudoku.
                                 </h2>
                                 <h2 class="projects__description--title">
-                                    <span class="projects__description--titleColor">Użyte technologie:</span> HTML5, CSS3, React.js.
+                                    <span class="projects__description--titleColor">Użyte technologie:</span> React.js.
                                 </h2>
                                 <p class="projects__description--text">
                                     Projekt wykonany podczas bootcampu Kodilla.
@@ -258,7 +258,7 @@
                     <p class="section__title--text">Napisz do mnie</p>
                 </div>
                 <div class="flex-wrapper">
-                    <form action="./../server/server.php" method="post" id="uForm">
+                    <form action="server/server.php" method="post" id="uForm">
                         <div class="id">
                             <input id="name_Lastname" type="text" name="name" placeholder="Imię i Nazwisko">
                             <input id="mail" type="text" name="mail" placeholder="Email example@gmail.com">
@@ -279,6 +279,7 @@
                 <p class="footer_text">Dawid Kaczmarek © 2018</p>
             </div>
         </footer>
+        <script type='application/javascript' src='/path/to/fastclick.js'></script>
         <script src="https://unpkg.com/scrollreveal"></script>
     </body>
 </html>

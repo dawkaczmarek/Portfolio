@@ -46,8 +46,8 @@ const prod = merge([
         minimizeOptionsHtml: true
     }),
     parts.CopyWebpackPlugin({
-        from: 'server/',
-        to: 'server/'
+        from: './src/server/',
+        to: path.resolve(__dirname, '../dist/server')
     }),
     parts.ProvidePlugin(),
     parts.HashedModulePlugin()

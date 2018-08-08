@@ -225,11 +225,10 @@ exports.devServer = ({
     hot = true,
     proxy = {
         '/server/server.php': {
-            target: 'http://localhost:0080/Portfolio/',
-            secure: false,
-            changeOrigin: true,
+            target: 'http://localhost:0080/Portfolio/src',
         }
     },
+    historyApiFallback = true,
     overlay = true,
     contentBase
 } = {}) => {
@@ -249,6 +248,7 @@ exports.devServer = ({
             contentBase,
             hot,
             proxy,
+            historyApiFallback,
             overlay
         },
         plugins
