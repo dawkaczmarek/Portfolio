@@ -35,7 +35,6 @@ $(document).ready(function() {
                 counter = index;
                 clearInterval(interval);
                 animateSlide (toMargin, options.current_slide_duration, unit);
-
            })
            .mouseenter(function() {
                 $(this).css('background-color','#00ea94');
@@ -77,7 +76,6 @@ $(document).ready(function() {
 
         /* Funtcion to add and remove class active */
         function activeBullet (margin, index) {
-            
             if (margin >= lastMargin) {
                 if ($(window.width > 800)) {
                     $this.find('.bullet').removeAttr('style');
@@ -95,9 +93,7 @@ $(document).ready(function() {
                 slide();
             });
         }  
-
         slide(); 
- 
     });
 
 });

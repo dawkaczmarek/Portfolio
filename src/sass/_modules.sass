@@ -387,7 +387,33 @@ input[type=text]
     > span
         margin: 10px 0    
 
-.contact__button
+.massage
+    position: fixed
+    display: none
+    flex-direction: column
+    align-items: center
+    justify-content: space-around
+    max-width: 400px
+    min-height: 200px
+    top: 50%
+    transform: translate(-2%, -50%)
+    margin: 0 5px
+    padding: 0px 10px
+    background-color: $secodaryBgColor
+    box-shadow: 0 5px 25px rgba(0,0,0,.5);
+    text-align: center
+
+.massage__error
+    margin-top: 20px;
+    line-height: 21px;
+    color: $error    
+
+.massage__success
+    margin-top: 20px;
+    line-height: 21px;
+    color: $succes
+
+.contact__button, .massage__button
     @include button-properties
     background-color: inherit
     border: 2px solid $primaryColor
@@ -403,6 +429,22 @@ input[type=text]
         background-color: $primaryColor
         color: #ffffff
 
+.massage__button
+    @include button-properties
+    padding: 11px 28px
+    background-color: inherit
+    border: 2px solid $primaryColor
+    color: $primaryColor
+    &:link
+        background-color: transparent
+    &:visited
+        background-color: transparent    
+    &:hover
+        background-color: $primaryColor
+        color: #ffffff
+    &:active
+        background-color: $primaryColor
+        color: #ffffff
 
 #footer
     margin-top: 15px

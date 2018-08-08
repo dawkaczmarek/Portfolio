@@ -9,15 +9,18 @@ $(document).ready(function (){
     const WIDTH_WINDOW = 800;
 
     $(window).resize(function () {
+
         if ($(this).width() >= WIDTH_WINDOW) {
             $('[style^=display]').removeAttr('style');
             $('.flex-wrapper__nav').stop().animate({
                 height: "80px"
             }, DELAY_ANIMATE_NAV)
         }
+        
     });
 
     $iconHamburger.click(function () {
+
         $('.flex-wrapper__nav').stop().animate({
             height: "150px"
         }, DELAY_ANIMATE_NAV, function() {
@@ -28,6 +31,7 @@ $(document).ready(function (){
     });
 
     $iconExit.click(function () {
+
         $iconHamburger.attr('style','display:flex')
         $navbar.attr('style', 'display:none')
         $iconExit.attr('style', 'display:none');
@@ -45,6 +49,7 @@ $(document).ready(function (){
 /* smoth scroll function */
 
     function smoothScroll(event, element) {
+
         event.preventDefault();
         event.stopPropagation();
         const $hrefLink =  element.attr('href');
@@ -63,13 +68,16 @@ $(document).ready(function (){
 /* add and remove .actvie into navigation */    
 
     $(window).scroll(function() {
+
         const $windowPosition = $(window).scrollTop();
+
         $('section[id]').each(function(index) {
             if($(this).position().top - $nav.height() <= $windowPosition + 10) {
                 $('.navbar__link.active').removeClass('active');
                 $('.navbar__link').eq(index - 1).addClass('active');
             }
         });
+
     }).scroll();
 
 });
