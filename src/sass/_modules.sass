@@ -23,10 +23,6 @@
 .nav__logo--text
     margin-left: 10px
 
-.nav__logo--textR
-    margin-left: 10px
-    display: none 
-
 .navbar__link
     margin: 0 15px
     padding-bottom: 10px
@@ -129,9 +125,13 @@
     display: flex
     align-items: center
     flex-direction: column
+    max-width: 800px
+    width: 100%
+    text-align: center
 
 .hero__item--title
-    max-width: 800px
+    max-width: 750px
+    padding: 0 5px 0 5px
     @include boldFont
     @include font-size(40px)
     letter-spacing: 3px
@@ -163,7 +163,6 @@
    position: absolute
    display: flex
    justify-content: center
-   align-items: center
    width: 100%
    bottom: 8%
 
@@ -181,7 +180,9 @@
     margin-left: 9px
     border-radius: 50%
     border: 2px solid $primaryColor
-    cursor: pointer     
+    cursor: pointer
+    &:last-child
+        margin-right: 9px     
 
 /* Section title */    
 .section__title
@@ -203,6 +204,7 @@
 /* About me */
 #about-me
     padding: $paddingSection
+    background-color: $secodaryBgColor
     @include font-size(20px)
 
 .about-me__text
@@ -224,8 +226,10 @@
     align-items: center
     &:nth-child(2)
         margin-left: 2.5%
-        .about-me__link--svg
-            width: 37px
+        .about-me__link--svg > img 
+            width: 40px
+            height: 40px
+            
 
 .about-me__link--svg
     margin: 3.5px 0 0 2.5%
