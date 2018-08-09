@@ -2,6 +2,7 @@ const BrowserWebpackPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ClearWebpack = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
@@ -184,6 +185,16 @@ exports.CopyWebpackPlugin = ({
                     to
                 }
             ])
+        ]
+    }
+}
+
+exports.CompressionWebpackPlugin = () => {
+    return {
+        plugins: [
+            new CompressionWebpackPlugin({
+                test: /\.(js|css|html)$/
+            })
         ]
     }
 }

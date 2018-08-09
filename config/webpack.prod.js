@@ -29,7 +29,7 @@ const prod = merge([
                 quality: 80
             },
             pngquant: {
-                quality: '65-90',
+                quality: 75,
                 speed: 4
             },
             web: {
@@ -49,6 +49,7 @@ const prod = merge([
         from: './src/server/',
         to: path.resolve(__dirname, '../dist/server')
     }),
+    parts.CompressionWebpackPlugin(),
     parts.ProvidePlugin(),
     parts.HashedModulePlugin()
 
