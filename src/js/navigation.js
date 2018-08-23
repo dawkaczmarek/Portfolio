@@ -69,15 +69,14 @@ $(document).ready(function (){
 
     $(window).scroll(function() {
 
-        const $windowPosition = $(window).scrollTop();
-
+        const $windowPosition = $(window).scrollTop() + ($(window).height() / 3);
+ 
         $('section[id]').each(function(index) {
-            if($(this).position().top - $nav.height() <= $windowPosition + 10) {
+            if($(this).position().top - $nav.height() <= $windowPosition) {
                 $('.navbar__link.active').removeClass('active');
                 $('.navbar__link').eq(index - 1).addClass('active');
             }
         });
 
     }).scroll();
-
 });

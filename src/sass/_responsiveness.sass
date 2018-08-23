@@ -44,9 +44,11 @@
             .left-column
                 margin: 0
             .right-column
-                margin: 0
+                height: 100%
+                margin: 15px 0 15px 0
+
     .about-me__img
-        width: 100%
+        width: 80%
     .left-column, .right-column
         width: 95%
 
@@ -57,7 +59,8 @@
             .left-column
                 margin: 0
             .right-column__projects
-                margin: 0 
+                height: 100%
+                margin: 15px 0 0 0
         .projects__bg
             &:nth-child(odd)
                 background-color: $secodaryBgColor   
@@ -67,9 +70,9 @@
                         .left-column
                             margin: 0
                         .right-column__projects
-                            margin: 0            
+                            margin: 15px 0 0 0           
     .projects__img
-        width: 100%    
+        width: 80%    
 
 @media (max-width: 800px)
 
@@ -92,7 +95,7 @@
         flex-direction: column-reverse;
         
     .about-me__img 
-        width: 100%
+        width: 80%
         max-width: 500px
 
 
@@ -105,7 +108,8 @@
 
     .hero__item--title
        font-size: 1.8rem  
-
+    .about-me__img, .projects__img
+        width: 100%
 
 @media (max-width: 470px)
 
